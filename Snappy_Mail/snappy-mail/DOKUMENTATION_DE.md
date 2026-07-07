@@ -24,7 +24,7 @@ Dieses Projekt implementiert einen vollständigen E-Mail-Server mit Web-Interfac
 
 Das System ist in folgende Schichten unterteilt:
 
-![Architecture](/Bild/architecture.png)
+![Architecture](/Snappy_Mail/Bild/architecture.png)
 
 ### 2.2 Netzwerk-Topologie
 
