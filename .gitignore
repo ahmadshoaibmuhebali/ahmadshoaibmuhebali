@@ -1,0 +1,13 @@
+acme.json
+important.txt
+important.md
+important*
+.env
+.env.*
+*.log
+node_modules/
+dist/
+build/
+coverage/
+*.tmp
+*.swp
