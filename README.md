@@ -2,7 +2,7 @@
 - 👀 I’m interested in IT 
 - 🌱 I’m currently learning Platform development
 - 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ahmadshoaib.muhebali@lernende.ethz.ch
+- 📫 How to reach me shoaibi.jawadi@gmail.com
 
 <!---
 ahmadshoaibmuhebali/ahmadshoaibmuhebali is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
