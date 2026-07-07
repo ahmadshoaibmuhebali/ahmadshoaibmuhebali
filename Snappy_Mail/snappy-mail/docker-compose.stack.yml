@@ -1,0 +1,162 @@
+version: '3.8'
+
+services:
+  mailserver:
+    image: mailserver/docker-mailserver:latest
+    hostname: ${MAILSERVER_FQDN}
+    environment:
+      - DOMAINNAME=${DOMAIN}
+      - HOSTNAME=${MAILSERVER_FQDN}
+      - OVERRIDE_HOSTNAME=${MAILSERVER_FQDN}
+      # Database for postfixadmin integration
+      - DMS_DB_HOST=mariadb
+      - DMS_DB_NAME=mailserver
+      - DMS_DB_USER=mailuser
+      - DMS_DB_PASS=${MYSQL_PASSWORD}
+      # Postfixadmin setup password (for the admin interface)
+      - POSTFIXADMIN_PASSWORD=${POSTFIXADMIN_PASSWORD}
+      # SSL configuration (using flat files from your host)
+      - SSL_TYPE=manual
+      - SSL_CERT_PATH=/tmp/dms/custom-certs/cert.pem
+      - SSL_KEY_PATH=/tmp/dms/custom-certs/key.pem
+      # Relay SandGrind
+      - RELAY_HOST=${RELAY_HOST}
+      - RELAY_PORT=${RELAY_PORT}
+      - RELAY_USER=${RELAY_USER}
+      - RELAY_PASSWORD=${RELAY_PASSWORD}
+    ports:
+      - "25:25"     # SMTP (Inbound/Outbound routing)
+      - "143:143"   # IMAP (STARTTLS)
+      - "465:465"   # ESMTP (Implicit SSL/TLS)
+      - "587:587"   # SMTP Submission (Explicit STARTTLS)
+      - "993:993"   # IMAPS (Implicit SSL/TLS)
+    volumes:
+      - /var/dms/custom-certs:/tmp/dms/custom-certs:ro
+      - mail_data:/var/mail
+      - mail_vmail:/var/vmail
+      - mail_dkim:/etc/opendkim/keys
+      - ./certs:/etc/letsencrypt/live:ro
+      - ./config:/tmp/docker-mailserver
+    networks:
+      - mailnet
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      labels:
+        - "traefik.enable=false"
+
+  mariadb:
+    image: mariadb:10.11
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=mailserver
+      - MYSQL_USER=mailuser
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - mailnet
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    networks:
+      - mailnet
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  postfixadmin:
+    image: postfixadmin:latest
+    environment:
+      - POSTFIXADMIN_DB_TYPE=mysqli
+      - POSTFIXADMIN_DB_HOST=mariadb
+      - POSTFIXADMIN_DB_NAME=mailserver
+      - POSTFIXADMIN_DB_USER=mailuser
+      - POSTFIXADMIN_DB_PASSWORD=${MYSQL_PASSWORD}
+      - POSTFIXADMIN_SETUP_PASSWORD=${POSTFIXADMIN_PASSWORD}
+      - POSTFIXADMIN_SMTP_SERVER=${MAILSERVER_FQDN}
+      - POSTFIXADMIN_DOMAIN=${DOMAIN}
+      # FIXED: Apache custom configuration injection bypasses the swarm config limitation!
+      - APACHE_CUSTOM_CONFIG=php_value output_buffering On
+    volumes:
+      - postfixadmin_data:/var/www/postfixadmin/templates_c
+    networks:
+      - mailnet
+      - traefik-public
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik-public"
+        - "traefik.http.routers.postfixadmin.rule=Host(`postfixadmin.cloud-ah.online`)"
+        - "traefik.http.routers.postfixadmin.entrypoints=websecure"
+        - "traefik.http.routers.postfixadmin.tls.certresolver=letsencrypt"
+        - "traefik.http.services.postfixadmin.loadbalancer.server.port=80"
+
+  rainloop:
+    image: djmaze/snappymail:latest
+    environment:
+      - RAINLOOP_DOMAIN=${DOMAIN}
+      - RAINLOOP_IMAP_HOST=${MAILSERVER_FQDN}
+      - RAINLOOP_IMAP_PORT=143
+      - RAINLOOP_SMTP_HOST=${MAILSERVER_FQDN}
+      - RAINLOOP_SMTP_PORT=587
+    volumes:
+      - snappy_persistent:/var/lib/snappymail
+    networks:
+      - mailnet
+      - traefik-public
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik-public"
+        - "traefik.http.routers.rainloop.rule=Host(`webmail.cloud-ah.online`)"
+        - "traefik.http.routers.rainloop.entrypoints=websecure"
+        - "traefik.http.routers.rainloop.tls.certresolver=letsencrypt"
+        # FIXED: Pointing to correct Snappymail internal port 80 to fix 502 Bad Gateway
+        - "traefik.http.services.rainloop.loadbalancer.server.port=8888"
+
+networks:
+  mailnet:
+    driver: overlay
+    attachable: true
+  traefik-public:
+    external: true
+
+volumes:
+  mail_data:
+  mail_vmail:
+  mail_dkim:
+  mysql_data:
+  redis_data:
+  postfixadmin_data:
+  snappy_persistent:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /opt/mailserver/snappymail-data
