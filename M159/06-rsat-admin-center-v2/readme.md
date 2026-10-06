@@ -119,5 +119,5 @@ RSAT kann je nach Konfiguration einzelne LDAP-, DNS- oder Active-Directory-Funkt
 
 RSAT und Windows Admin Center wurden auf **WIN** eingerichtet. Der Windows-Domänencontroller **DC01** kann über die Active-Directory-Erweiterung und WinRM verwaltet werden. Der externe Zugriff erfolgt über `rsat.cloud-ah.com` und muss durch HTTPS sowie geeignete Netzwerk- und Zugriffsbeschränkungen abgesichert werden. Der Samba-4-Domänencontroller wird getrennt mit Samba-Werkzeugen administriert.
 
-![RSAT-Admin-Join](/images/RSAT-Amin-Join.png)
-![RSAT-DC01](/images/RSAT-DC01.png)
+![RSAT-Admin-Join](/M159/images/RSAT-Amin-Join.png)
+![RSAT-DC01](/M159/images/RSAT-DC01.png)

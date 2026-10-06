@@ -179,12 +179,12 @@ der Abgabe unkenntlich gemacht werden.
 
 | Nachweis | Was auf dem Screenshot sichtbar sein sollte | Screenshot |
 | :--- | :--- | :--- |
-| SMB-Freigabe | Server `DC01` und Freigabe `FSLogixProfiles$` | ![FSLogix_Share](/images/FSLogix_Share.png) |
-| GPO-Übersicht | Gruppenrichtlinienobjekt `GPO_FXLogix` und dessen Verknüpfung | ![FSLogix_GPO](/images/FSLogix_GPO.png) |
-| GPO-Konfiguration | Aktivierte Profile-Container-Einstellung und `VHD Locations` mit `\\DC01\FSLogixProfiles$` | ![FSLogix_GPO_Conf](/images/FSLogix_GPO_Config.png) |
-| Berechtigungen | NTFS-Berechtigungen des Profilordners | ![FSLogix_NTFS_Permissions](/images/FSLogix_NTFS_Permissions.png) |
-| Erstellter Container | Profilcontainer nach der ersten Testanmeldung auf `DC01` | ![FSLogix_Folder_Content](/images/FSLogix_Folder_Content.png) |
-| GPO-Nachweis | Ausgabe von `gpresult /r /scope computer` auf dem Testclient mit `GPO_FXLogix` | ![FSLogix_GPO_Result_Computer](/images/FSLogix_GPO_Result_Computer.png) |
+| SMB-Freigabe | Server `DC01` und Freigabe `FSLogixProfiles$` | ![FSLogix_Share](/M159/images/FSLogix_Share.png) |
+| GPO-Übersicht | Gruppenrichtlinienobjekt `GPO_FXLogix` und dessen Verknüpfung | ![FSLogix_GPO](/M159/images/FSLogix_GPO.png) |
+| GPO-Konfiguration | Aktivierte Profile-Container-Einstellung und `VHD Locations` mit `\\DC01\FSLogixProfiles$` | ![FSLogix_GPO_Conf](/M159/images/FSLogix_GPO_Config.png) |
+| Berechtigungen | NTFS-Berechtigungen des Profilordners | ![FSLogix_NTFS_Permissions](/M159/images/FSLogix_NTFS_Permissions.png) |
+| Erstellter Container | Profilcontainer nach der ersten Testanmeldung auf `DC01` | ![FSLogix_Folder_Content](/M159/images/FSLogix_Folder_Content.png) |
+| GPO-Nachweis | Ausgabe von `gpresult /r /scope computer` auf dem Testclient mit `GPO_FXLogix` | ![FSLogix_GPO_Result_Computer](/M159/images/FSLogix_GPO_Result_Computer.png) |
 
 
 > [!NOTE]

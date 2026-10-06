@@ -40,7 +40,7 @@ Passwörter, Client-Secrets, private Schlüssel und Bind-Credentials werden nich
 Dokumentation oder im Git-Repository gespeichert.
 
 #### Architekture
-![Architekture](/images/Architekture.svg)
+![Architekture](/M159/images/Architekture.svg)
 
 ## 2. Funktionsweise
 
@@ -285,10 +285,10 @@ openssl s_client -connect dc1.cloud-ah.local:636 \\
 
 | Nachweis | Sichtbarer Inhalt | Empfohlener Dateiname |
 | :--- | :--- | :--- |
-| Authentik-Übersicht | Authentik-Anwendung `Portainer` | ![authentik-portainer-application](/images/authentik-portianer-application.png) |
-| LDAP-Quelle | Windows-AD-LDAPS-Quelle, Hostname, Port 636 und Base DN | ![authentik-windows-ldaps](/images/authentik-windows-ldaps.png) |
-| OIDC-Provider | Portainer-Provider ohne sichtbares Client-Secret | ![authentik-portainer-provider](/images/authentik-portainer-provider.png) |
-| Portainer-Konfiguration | Aktivierte OIDC-Anmeldung ohne Secret | ![portainer-oidc-setting](/images/protainer-oidc-settings.png) ||
+| Authentik-Übersicht | Authentik-Anwendung `Portainer` | ![authentik-portainer-application](/M159/images/authentik-portianer-application.png) |
+| LDAP-Quelle | Windows-AD-LDAPS-Quelle, Hostname, Port 636 und Base DN | ![authentik-windows-ldaps](/M159/images/authentik-windows-ldaps.png) |
+| OIDC-Provider | Portainer-Provider ohne sichtbares Client-Secret | ![authentik-portainer-provider](/M159/images/authentik-portainer-provider.png) |
+| Portainer-Konfiguration | Aktivierte OIDC-Anmeldung ohne Secret | ![portainer-oidc-setting](/M159/images/protainer-oidc-settings.png) ||
 
 ## 13. Ergebnis
 

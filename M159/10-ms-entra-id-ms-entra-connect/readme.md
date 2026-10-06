@@ -76,7 +76,7 @@ angehört und die DNS-Rolle installiert ist.
 
 Erwartetes Ergebnis:
 
-![DC1-Replika in Active Directory Users and Computers](../../images/dc1-replica-user-and-groups.png)
+![DC1-Replika in Active Directory Users and Computers](/M159/images/dc1-replica-user-and-groups.png)
 
 ### 6. Prüfung in der DNS-Konsole
 
@@ -89,7 +89,7 @@ Erwartetes Ergebnis:
 5. Falls eine Reverse-Lookupzone eingerichtet ist, auch den PTR-Eintrag für
    `10.0.12.83` prüfen.
 
-![DC1-Replika-DNS](../../images/dc1-replica-dns.png)
+![DC1-Replika-DNS](/M159/images/dc1-replica-dns.png)
 
 ## Teil B: Replikationsstatus und FSMO-Rollen
 
@@ -162,7 +162,7 @@ Netzwerkverbindung zum privaten AD-Subnetz oder eine nicht erreichbare AD-/DNS-R
 `dc1-replica` zu prüfen. Ein zuvor zwischengespeicherter Domänenlogin kann unabhängig
 davon noch funktionieren; dieser Test belegt jedoch keinen erfolgreichen Failover.
 
-![Fehlgeschlagener Client-Verbindungstest](/images/Replica-Client-Connection-Test.png)
+![Fehlgeschlagener Client-Verbindungstest](/M159/images/Replica-Client-Connection-Test.png)
 
 ### Nachkontrolle und Lösung
 
@@ -171,7 +171,7 @@ von `dc1-replica` in der Client-Konfiguration ergänzt wurde, konnte sich der
 Domänenbenutzer am Client anmelden. Damit war der Failover nach der Korrektur der
 Client-DNS-Konfiguration erfolgreich.
 
-![Erfolgreicher Client-Verbindungstest](/images/Client-Connection-Test-Posetive.png)
+![Erfolgreicher Client-Verbindungstest](/M159/images/Client-Connection-Test-Posetive.png)
 
 
 ## Teil E: Entscheid zur Verteilung auf zwei Domain Controller
@@ -214,4 +214,3 @@ sondern beide internen DNS-Server verwenden:
 
 Die Clients dürfen für die Domänenauflösung nicht auf öffentliche DNS-Server wie `8.8.8.8`
 ausweichen, weil diese die interne Zone `dc1.cloud-ah.local` nicht kennen.
-

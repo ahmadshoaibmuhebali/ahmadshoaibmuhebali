@@ -1,7 +1,7 @@
 # Initiales Setup
 Die EC2-Instanzen wurden gemäss Planung erstellt. Drei Instanzen befinden sich
 im vorgesehenen Subnetz und verwenden die geplanten IP-Adressen.
-![EC2](/images/EC2_Instances.png)
+![EC2](/M159/images/EC2_Instances.png)
 
 ## Init-Skript
 Das Init-Skript wurde angepasst und auf jeder Instanz ausgeführt.
@@ -175,4 +175,4 @@ try {
 Write-Host "Fertig: Verknuepfungen, Ping, Explorer-Ansichten, Tastaturliste de-CH, Region/Datum/Zeit Schweiz (System/HKCU/Default) gesetzt."
 ```
 ## Server und Client 
-![Server-Client](/images/Server.png)
+![Server-Client](/M159/images/Server.png)

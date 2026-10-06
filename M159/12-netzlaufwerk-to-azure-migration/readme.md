@@ -48,7 +48,7 @@ Dies wäre eigentlich die eleganteste Lösung, da sich die Clients direkt gegen�
 
 | Schritte  | Printscreens                                      |
 | --------- | ------------------------------------------------- |
-| Schritt 1 | ![Storage Account](resources/storage-account.png) |
+| Schritt 1 | ![Storage Account](/M159/12-netzlaufwerk-to-azure-migration/resources/storage-account.png) |
 | Schritt 2 | Rest mit den Standardeinstellungen                |
 
 
@@ -57,9 +57,9 @@ Dies wäre eigentlich die eleganteste Lösung, da sich die Clients direkt gegen�
 
 | Schritte  | Printscreens                               |
 | --------- | ------------------------------------------ |
-| Schritt 1 | ![share](resources/create-new-share-1.png) |
-| Schritt 2 | ![share](resources/create-new-share-2.png) |
-| Schritt 3 | ![share](resources/create-new-share-3.png) |
+| Schritt 1 | ![share](/M159/12-netzlaufwerk-to-azure-migration/resources/create-new-share-1.png) |
+| Schritt 2 | ![share](/M159/12-netzlaufwerk-to-azure-migration/resources/create-new-share-2.png) |
+| Schritt 3 | ![share](/M159/12-netzlaufwerk-to-azure-migration/resources/create-new-share-3.png) |
 
 
 
@@ -67,8 +67,8 @@ Dies wäre eigentlich die eleganteste Lösung, da sich die Clients direkt gegen�
 
 | Schritte                          | Printscreens                                                 |
 | --------------------------------- | ------------------------------------------------------------ |
-| Schritt 1 (Zugriff konfigurieren) | ![Entra_Kerberos_einrichten](resources/zugriff-aktivieren.png) |
-| Schritt 2                         | ![Entra_Kerberos_einrichten](resources/ad-ds-access.png)     |
+| Schritt 1 (Zugriff konfigurieren) | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/zugriff-aktivieren.png) |
+| Schritt 2                         | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/ad-ds-access.png)     |
 
 ## Domain join the storage account to your Domain
 
@@ -149,10 +149,10 @@ Wenn du die Cmdlets (z. B. `Join-AzStorageAccountForAuth`, `Update-AzStorageFile
 
 | Schritte                                                | Printscreens                                                 |
 | ------------------------------------------------------- | ------------------------------------------------------------ |
-| Schritt 1 (Überprüfen ob die PS-Befehle vorhanden sind) | ![Entra_Kerberos_einrichten](resources/domainjoinstorageaccount/azfileshybrid-ps.png) |
-| Schritt 2 (Connect to Azure)                            | ![Entra_Kerberos_einrichten](resources/domainjoinstorageaccount/connect-azaccount.png) |
-| Schritt 3 (Join-AzStorageAccount)                       | ![Entra_Kerberos_einrichten](resources/domainjoinstorageaccount/join-azstorageaccount.png) |
-| Schritt 4 (StorageAccountObjekt-AD verifizieren)        | ![Entra_Kerberos_einrichten](resources/domainjoinstorageaccount/storageaccountobjekt-ad.png) |
+| Schritt 1 (Überprüfen ob die PS-Befehle vorhanden sind) | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/domainjoinstorageaccount/azfileshybrid-ps.png) |
+| Schritt 2 (Connect to Azure)                            | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/domainjoinstorageaccount/connect-azaccount.png) |
+| Schritt 3 (Join-AzStorageAccount)                       | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/domainjoinstorageaccount/join-azstorageaccount.png) |
+| Schritt 4 (StorageAccountObjekt-AD verifizieren)        | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/domainjoinstorageaccount/storageaccountobjekt-ad.png) |
 
 
 
@@ -166,8 +166,8 @@ Die Gruppenrichtlinie „Define host name-to-Kerberos realm mappings“ sorgt da
 
 | Schritte                                                | Printscreens                                                 |
 | ------------------------------------------------------- | ------------------------------------------------------------ |
-| Schritt 1 (Überprüfen ob die PS-Befehle vorhanden sind) | ![Entra_Kerberos_einrichten](resources/domainjoinstorageaccount/azfileshybrid-ps.png) |
-| Schritt 2 (Connect to Azure)                            | ![Entra_Kerberos_einrichten](resources/domainjoinstorageaccount/connect-azaccount.png) |
+| Schritt 1 (Überprüfen ob die PS-Befehle vorhanden sind) | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/domainjoinstorageaccount/azfileshybrid-ps.png) |
+| Schritt 2 (Connect to Azure)                            | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/domainjoinstorageaccount/connect-azaccount.png) |
 
 
 
@@ -178,7 +178,7 @@ Die Gruppenrichtlinie „Define host name-to-Kerberos realm mappings“ sorgt da
 
 | Schritte  | Printscreens                                      |
 | --------- | ------------------------------------------------- |
-| Schritt 1 | ![Entra_Kerberos_einrichten](resources/roles.png) |
+| Schritt 1 | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/roles.png) |
 
 
 
@@ -188,9 +188,9 @@ Die Gruppenrichtlinie „Define host name-to-Kerberos realm mappings“ sorgt da
 
 | Schritte                                                     | Printscreens                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Schritt 1 (Device State Hybrid&SSO mit `dsregcmd /status` überpüfen) | ![Entra_Kerberos_einrichten](resources/verbinden/azureadprt-yes.png) |
-| Schritt 2                                                    | ![Entra_Kerberos_einrichten](resources/verbinden/netuse.png) |
-| Schritt 3                                                    | ![Entra_Kerberos_einrichten](resources/verbinden/explorer.png) |
+| Schritt 1 (Device State Hybrid&SSO mit `dsregcmd /status` überpüfen) | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/verbinden/azureadprt-yes.png) |
+| Schritt 2                                                    | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/verbinden/netuse.png) |
+| Schritt 3                                                    | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/verbinden/explorer.png) |
 
 
 
@@ -208,8 +208,7 @@ Die Gruppenrichtlinie „Define host name-to-Kerberos realm mappings“ sorgt da
 
 | Schritte  | Printscreens                                                 |
 | --------- | ------------------------------------------------------------ |
-| Schritt 1 | ![Entra_Kerberos_einrichten](resources/zugriff/identitaetsbasierter-zugriff1.png) |
-| Schritt 2 | ![Entra_Kerberos_einrichten](resources/zugriff/identitaetsbasierter-zugriff2-1.png) |
-| Schritt 3 | ![Entra_Kerberos_einrichten](resources/zugriff/identitaetsbasierter-zugriff2.png) |
-| Schritt 4 | ![Entra_Kerberos_einrichten](resources/zugriff/identitaetsbasierter-zugriff3.png) |
-
+| Schritt 1 | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/zugriff/identitaetsbasierter-zugriff1.png) |
+| Schritt 2 | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/zugriff/identitaetsbasierter-zugriff2-1.png) |
+| Schritt 3 | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/zugriff/identitaetsbasierter-zugriff2.png) |
+| Schritt 4 | ![Entra_Kerberos_einrichten](/M159/12-netzlaufwerk-to-azure-migration/resources/zugriff/identitaetsbasierter-zugriff3.png) |

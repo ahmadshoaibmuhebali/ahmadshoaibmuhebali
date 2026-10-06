@@ -243,7 +243,7 @@ Legende:
 | `C:\CLOUD-AH.COM` | - | - | - | - | - | - | - | - | - | **C** |
 
 > **Wichtig:** Die direkte Vergabe von NTFS-Rechten an `CLOUD-AH.COM\Partner`, `CLOUD-AH.COM\Promoter` oder `CLOUD-AH.COM\CLOUD-AH.COM` funktioniert nur bei bestehendem CLOUD-AH.COMal Trust und korrekter Namensauflösung. Best Practice ist die Kapselung über domänenlokale Gruppen in `DC1.CLOUD-AH.LOCAL` (siehe Abschnitt 7).
-![Permission](/images/Permission.png)
+![Permission](/M159/images/Permission.png)
 ---
 
 ### 4.4 Automation per PowerShell Script

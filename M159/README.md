@@ -7,7 +7,7 @@ Rahmen von Modul 159. Die Dokumentation verbindet klassische Active-Directory-
 Administration mit AWS-Infrastruktur, Dateidiensten, Identitätsmanagement und Single
 Sign-on.
 
-![Netzwerkübersicht](images/nework-diagramm.svg)
+![Netzwerkübersicht](/M159/images/nework-diagramm.svg)
 
 ### Projekt auf einen Blick
 

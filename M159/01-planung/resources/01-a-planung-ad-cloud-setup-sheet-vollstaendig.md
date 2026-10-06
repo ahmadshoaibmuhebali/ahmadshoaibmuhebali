@@ -2,7 +2,7 @@
 
 In diesem Dokument werden die konfigurierten Angaben sowie die zu verwendenden Zugangsdaten für die M159-Umgebung festgehalten. Es dient als vollständige Planungs- und Betriebsdokumentation für die Umsetzung im AWS- und Microsoft-Cloud-Kontext.
 
-![Modul_159_Architekturdiagramm](/images/nework-diagramm.svg)
+![Modul_159_Architekturdiagramm](/M159/images/nework-diagramm.svg)
 
 ---
 
@@ -31,7 +31,7 @@ Trust-Beziehung und passende DNS-Auflösung voraus.
 | Vorname | AhmadShoaib |
 | Nachname | MuhebAli |
 | Klasse | PE24e |
-| Dokumentation (GIT-Repository-Link) | [https://gitlab.com/ahmadshoaib.muhebali/m159-muhebali](https://gitlab.com/ahmadshoaib.muhebali/m159-muhebali) |
+| Dokumentation (GIT-Repository-Link) | [https://github.com/ahmadshoaibmuhebali/ahmadshoaibmuhebali/tree/main/M159](https://github.com/ahmadshoaibmuhebali/ahmadshoaibmuhebali/tree/main/M159) |
 | Projektname | M159 - Active Directory und Cloud-Integration |
 | Verantwortlicher | AhmadShoaib MuhebAli |
 
@@ -125,7 +125,7 @@ aus dem Internet möglich. Deshalb wurde eine Route für den administrativen
 Zugriff auf das C<slient-Subnetz konfiguriert, wie im folgenden Beispielbild
 dargestellt.
 
-![Routing Client](/images/Private_Subnet_Route.png)
+![Routing Client](/M159/images/Private_Subnet_Route.png)
 ---
 
 ## 6. Active Directory Umgebung
@@ -241,4 +241,3 @@ Definiert wurden je ein Benutzer für die folgenden 3 Abteilungen sowie ein exte
 | Signin-Flow | Authentik login page |
 
 ---
-

@@ -4,7 +4,7 @@
 >
 > **Hinweis:** AWS Managed AD ist kostenpflichtig (ca. 18 $ pro Woche). Für dieses Modul wurde stattdessen ein **Samba 4 AD DC** verwendet. Die folgende Dokumentation beschreibt die Einrichtung einer **External Trust**-Beziehung zwischen dem Windows AD (`DC1.CLOUD-AH.LOCAL`) und dem Samba 4 AD (`CLOUD-AH.COM`).
 
-![Modul_159_Architekturdiagramm](/images/nework-diagramm.svg)
+![Modul_159_Architekturdiagramm](/M159/images/nework-diagramm.svg)
 ---
 
 ## Umgebung
@@ -57,7 +57,7 @@ Damit der Windows AD DNS-Server die Samba-Domäne `cloud-ah.com` auflösen kann 
 nslookup -type=SOA cloud-ah.com
 nslookup dc2.cloud-ah.com
 ```
-![Test-Result-DC01](/images/dns_lookup_trust.png)
+![Test-Result-DC01](/M159/images/dns_lookup_trust.png)
 
 ### 2.2 Samba 4 DC `DC02` – DNS Forwarder
 
@@ -107,7 +107,7 @@ Anschliessend Samba-Dienste neu starten:
 ```bash
 sudo systemctl restart samba-ad-dc
 ```
-![Samba-4-AD-Service-Status](/images/Samba-4-AD-Service.png)
+![Samba-4-AD-Service-Status](/M159/images/Samba-4-AD-Service.png)
 
 **Test auf DC02:**
 
@@ -115,7 +115,7 @@ sudo systemctl restart samba-ad-dc
 nslookup -type=SOA dc1.cloud-ah.local
 nslookup dc01.dc1.cloud-ah.local
 ```
-![Test-REesult](/images/dns-dc02-test-result.png)
+![Test-REesult](/M159/images/dns-dc02-test-result.png)
 
 > [!TIP]
 >
@@ -169,12 +169,12 @@ Nach erfolgreicher Erstellung kann die Vertrauensstellung validiert werden.
 ```bash
 sudo samba-tool domain trust list
 ```
-![Turst-List-Samba](/images/Tust-List-Samba.png)
+![Turst-List-Samba](/M159/images/Tust-List-Samba.png)
 
 ```powershell
 nltest /domain_trusts
 ```
-![Trust-List-Windows](/images/Trust-List-Windows.png)
+![Trust-List-Windows](/M159/images/Trust-List-Windows.png)
 
 ---
 
@@ -184,4 +184,3 @@ Die Vertrauensstellung zwischen dem Windows AD (`DC1.CLOUD-AH.LOCAL`) und dem Sa
 Durch die Conditional Forwarder auf beiden DNS-Servern ist die gegenseitige Namensauflösung gewährleistet.  
 Die Validierung bestätigt die Funktionsfähigkeit der Vertrauensstellung.  
 Externe Benutzer aus `CLOUD-AH.COM` können nun kontrolliert auf Freigaben des Windows-Servers `DC01` zugreifen, wobei die NTFS-Berechtigungen die zentrale Steuerungsinstanz bilden.
-

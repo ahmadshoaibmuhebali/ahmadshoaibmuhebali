@@ -65,7 +65,7 @@ einen Fehler melden kann.
 
 Der vorhandene Screenshot zeigt den erfolgreichen Skriptlauf mit den drei Ziel-OUs:
 
-![Ausgabe des erfolgreichen Skriptlaufs](../images/Import_user_Script.png)
+![Ausgabe des erfolgreichen Skriptlaufs](/M159/images/Import_user_Script.png)
 
 Der Screenshot zeigt die Ausgaben für `hmuster`, `pbeispiel` und `llustig` sowie die korrekten
 Zielpfade. Dieser Screenshot ist ein Laufnachweis, erfüllt aber noch nicht vollständig das

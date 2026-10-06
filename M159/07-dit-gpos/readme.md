@@ -15,7 +15,7 @@ Für die Umgebung wurde ein Directory Information Tree (DIT) mit folgenden Grund
 
 Diese Struktur erleichtert die Delegation von Berechtigungen, die gezielte Verknüpfung von GPOs und die spätere Administration des Verzeichnisses.
 
-![DIT](/images/DIT.svg)
+![DIT](/M159/images/DIT.svg)
 
 ## Gruppenrichtlinien
 
@@ -23,7 +23,7 @@ Diese Struktur erleichtert die Delegation von Berechtigungen, die gezielte Verkn
 
 Die Passwortrichtlinien wurden in der **Default Domain Policy** angepasst. In der Standardrichtlinie werden ausschliesslich die erforderlichen Passworteinstellungen verändert. Andere Einstellungen werden in separaten, thematisch abgegrenzten GPOs konfiguriert.
 
-![Password-Complexity](/images/Password-Complexity.png)
+![Password-Complexity](/M159/images/Password-Complexity.png)
 
 ### 2. Netzlaufwerke verteilen
 
@@ -35,19 +35,19 @@ Die Netzlaufwerke werden abhängig von Benutzer- und Abteilungszugehörigkeit ü
 
 Das Laufwerk für externe Benutzer konnte nicht über die Windows-GPO-Infrastruktur bereitgestellt werden. Die externen Benutzer befinden sich auf einem separaten Samba-4-AD-Domänencontroller, während die betreffenden Ressourcen auf dem Windows-Domänencontroller liegen. Für diese Benutzer wäre eine separate Vertrauensstellung oder eine alternative Berechtigungs- und Bereitstellungslösung erforderlich.
 
-![Pool und Intern Drive Map GPO](/images/Pool-Intern-Drive-Map.png)
+![Pool und Intern Drive Map GPO](/M159/images/Pool-Intern-Drive-Map.png)
 *Abbildung: GPOs für die Laufwerke Pool und Intern*
 
-![Abteilung Drive Map GPO](/images/Abteillung-Drive-Map.png)
+![Abteilung Drive Map GPO](/M159/images/Abteillung-Drive-Map.png)
 *Abbildung: GPO für die Abteilungslaufwerke*
 
 ### 3. Desktop-Verknüpfung mit Sicherheitsfilterung
 
 Für die CRM-Anwendung wurde eine GPO mit einer Desktop-Verknüpfung erstellt und auf der obersten Ebene der Domäne verknüpft. Mithilfe der positiven Sicherheitsfilterung wird die Richtlinie nur auf die dafür vorgesehene Sicherheitsgruppe angewendet. Dadurch erhalten ausschliesslich berechtigte Benutzer die Verknüpfung.
 
-![GPO-Sicherheitfilterung](/images/CRM-GPO-Security-Filter.png)
+![GPO-Sicherheitfilterung](/M159/images/CRM-GPO-Security-Filter.png)
 
-![GPO-Shortcut](/images/CRM-Shortcut.png)
+![GPO-Shortcut](/M159/images/CRM-Shortcut.png)
 
 ### 4. GPO mit WMI-Filter
 
@@ -63,7 +63,7 @@ Auf dem Server wurden zwei Testdrucker eingerichtet: ein Farb- und ein Schwarz-W
 
 Die Verteilung erfolgt über eine Gruppenrichtlinie.
 
-![Printer-GPO](/images/Printern-GPO.png)
+![Printer-GPO](/M159/images/Printern-GPO.png)
 
 ### 6. MSI-Paket verteilen
 
@@ -78,13 +78,13 @@ Das MSI-Paket von 7-Zip wird über eine GPO auf ausgewählten Clientcomputern in
 
 Die Installation wird beim nächsten Aktualisieren der Gruppenrichtlinien beziehungsweise beim nächsten Systemstart des Zielcomputers angewendet. Der Installationsstatus kann zusätzlich in der Ereignisanzeige des Clients überprüft werden.
 
-![7-Zip-Security-Group](/images/7-zip-Security-group.png)
+![7-Zip-Security-Group](/M159/images/7-zip-Security-group.png)
 
-![7-Zip-GPO](/images/7-Zip-GPO.png)
+![7-Zip-GPO](/M159/images/7-Zip-GPO.png)
 
-![7-Zip-GPO-Konfiguration](/images/7-zip-gpo-configuration.png)
+![7-Zip-GPO-Konfiguration](/M159/images/7-zip-gpo-configuration.png)
 
-![7-Zip-Event-Log](/images/7-Zip-Event-Log.png)
+![7-Zip-Event-Log](/M159/images/7-Zip-Event-Log.png)
 
 > [!TIP]
 > Eine ausführlichere Übersicht der GPO-Konfiguration befindet sich in der [GPO-HTML-Dokumentation](/07-dit-gpos/gpo.html).
