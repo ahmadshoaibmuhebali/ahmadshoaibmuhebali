@@ -1,0 +1,1 @@
+Computerkonfiguration → Administrative Vorlagen → System → Kerberos → Cloud Kerberos Ticketing aktivieren
