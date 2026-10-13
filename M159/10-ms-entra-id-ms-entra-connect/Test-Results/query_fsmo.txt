@@ -1,7 +1,0 @@
-Schema master               DC01.dc1.cloud-ah.local
-Domain naming master        DC01.dc1.cloud-ah.local
-PDC                         DC01.dc1.cloud-ah.local
-RID pool manager            DC01.dc1.cloud-ah.local
-Infrastructure master       DC01.dc1.cloud-ah.local
-The command completed successfully.
-
