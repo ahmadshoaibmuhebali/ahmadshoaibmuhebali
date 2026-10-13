@@ -23,12 +23,4 @@ Welcome to my GitHub profile! I'm a **DevOps & Automation Engineer / Systems Spe
 
 ---
 
-### 📊 GitHub Stats
-
-![Ahmad Shoaib's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ahmadshoaibmuhebali&show_icons=true&theme=radial)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ahmadshoaibmuhebali&layout=compact&theme=radial)
-
----
-
 > *"Automate the repetitive, simplify the complex, and write clean code."*
